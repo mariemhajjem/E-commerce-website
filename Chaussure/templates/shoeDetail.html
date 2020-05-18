@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block body %}
+  
+    
+    <div class="card-deck shoe">
+       
+        <div class="card">
+          <img class="card-img-top" src="{{shoe.img.url}}" alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-title">{{shoe.nom}}</h5>
+            <p class="card-text">{{shoe.description}}</p>
+          </div>
+           <a href="{% url 'Chaussure:edit_shoe' shoe.id %}" class="btn btn-primary">modifier</a>
+        </div>
+       
+      </div>
+{% endblock body %}

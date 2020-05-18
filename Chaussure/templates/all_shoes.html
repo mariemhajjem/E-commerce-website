@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block body %}
+<div class="container">
+  <div class="split left">
+    <h1>The Designer</h1>
+    <a href="#" class="button">Read More</a>
+  </div>
+  <div class="split right">
+    <h1>The Programmer</h1>
+    <a href="#" class="button">Read More</a>
+  </div>
+</div>
+    {% for shoe in all_shoes %}
+    <div class="col-md-4">
+    <div class="card-deck">
+        <div class="card">
+            {% if shoe.img %}
+          <img class="card-img-top" src="{{shoe.img.url}}" alt="Card image cap">
+          {% endif %}
+          <div class="card-body">
+            <h5 class="card-title">{{shoe.nom}}</h5>
+            <p class="card-text">{{shoe.description | truncatewords:10}}</p>
+          </div>
+          <a href="{% url 'Chaussure:shoe' shoe.id %}" class="btn btn-primary">details</a>
+        </div>
+    </div>  
+    </div>
+   
+   
+    {% endfor %}
+{% endblock body %}
